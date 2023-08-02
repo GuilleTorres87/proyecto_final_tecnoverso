@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Inicio</title> <!-- Título de la página -->
+{% endblock %}
+
+{% block navegacion %}
+<!-- Barra de navegacion -->
+{% include 'navegacion.html' %} <!-- Inclusión de la barra de navegación desde otro archivo -->
+{% endblock %}
+
+{% block contenido %}
+<div class="image-wrapper">
+    <div class="text-overlay">
+        
+        
+        <h5>Mantenete informado con las últimas noticias y tendencias en <strong>TecnoVerso</strong>!</h5> <!-- Mensaje informativo -->
+        <div class="row">
+            {% for noti in notis %} 
+            <div class="col-md-4">
+                <div class="card mb-4" style="width: 18rem;">
+                    <img src="{{ noti.imagen.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ noti.titulo }}</h5>
+                        <p class="card-text">{{ noti.contenido }}</p>
+                        <a href="{% url 'apps.noticias:post_detalle' noti.id %}" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <img src="{% static 'img/fondo.jpg' %}">
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="bg-dark py-1 mt-0">
+    <div class="container text-light text-center">
+        <p class="display-6 mb-2">TecnoVerso</p> <!-- Título del footer -->
+        <p>
+            <h6>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
+                    <!-- Código del ícono de correo -->
+                </svg> Contacto: infogrupo5@gmail.com <!-- Información de contacto -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <!-- Código del ícono de WhatsApp -->
+                </svg> Cel: 3624-186379</h6> <!-- Información de contacto -->
+        </p>
+        <small class="text-white-50">&copy; Copyright >> Informatorio 2023 - Comision 4 - Grupo 5 <<< </small>
+        <!-- Aviso de derechos de autor -->
+    </div>
+</footer>
+{% endblock %}
+
+
+
+

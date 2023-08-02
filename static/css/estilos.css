@@ -1,0 +1,182 @@
+/* Estilos para que la imagen sea un fondo */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0; /* Ajusta el valor aquí para elevar o bajar el texto */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1; /* Establecemos un valor de z-index mayor que el de la imagen */
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo semi-transparente */
+    font-family: 'Manrope', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Ejemplo de fuente de Google Fonts */
+}
+
+/* Estilos para el navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 5px; /* Ajusta el espaciado del navbar según sea necesario */
+    background-color: #292733; /* Cambia el color de fondo del navbar si lo deseas */
+    height: auto;
+    
+    
+}
+
+/* Estilos para el logo del navbar */
+.logo-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 0; /* Ajusta el valor para subir o bajar el logo */
+    
+}
+
+/* estilos.css footer */
+.footer {
+    margin-top: 5%;
+    background-color: #292733;
+    padding: 10px;
+    text-align: center;
+    color: #292733;
+    font-size: 14px;
+}
+
+.texto-enfocado {
+    color: rgb(69, 104, 201); /* Cambiar el color del texto a azul */
+    font-size: 50px; /* Cambiar el tamaño del texto a 24px */
+    font-weight: normal; /* Quitar el estilo bold (negrita) */
+    font-family: 'Montserrat', sans-serif;
+    /* Agregar otros estilos que desees aplicar */
+  }
+
+
+.texto-centrado {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* styles.css */
+.nav-item {
+    /* Agrega aquí los estilos que desees para el elemento de lista */
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    color: #332583;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .nav-item a {
+    /* Estilos para el enlace dentro del nav-item */
+    text-decoration: none;
+    color: #fffefe;
+    font-size: 13px;
+  }
+  
+  .nav-item a:hover {
+    /* Estilos cuando se pasa el mouse por encima del enlace */
+    color: #3a81ce;
+  }
+  
+
+/* Estilo para el texto "Ya iniciaste sesión" */
+.ya-iniciaste-sesion {
+    /* Agrega aquí los estilos que desees para el texto */
+    color: #3a81ce; /* Cambia el color según tus preferencias */
+    font-weight: bold; /* Puedes ajustar el peso de la fuente si lo deseas */
+    font-size: 14px; /* Puedes ajustar el tamaño del texto */
+    text-decoration: underline;
+    /* Agrega más estilos si lo necesitas */
+  }
+  
+
+
+
+/* Estilos generales */
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del formulario de inicio de sesión */
+
+
+.login-form {
+ 
+    
+  
+    
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 400px;
+    padding: 3px;
+   
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4577b8;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #265696;
+    
+}
+
+
+
+

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Noticias</title>
+{% endblock %}
+
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
+
+{% block contenido %}
+<section data-bs-version="5.1" class="timeline3 cid-tf4QbpyVP7" id="timeline3-o"></section>
+
+<div class="row justify-content-center mb-3">
+    <div class="col-auto">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="categoriasDropdown"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorías
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="categoriasDropdown">
+                {% for i in categorias %}
+                <li><a class="dropdown-item" href="{% url 'apps.noticias:listar_por_categoria' i.nombre %}">{{i.nombre}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="col-auto">
+        <form action="{% url 'apps.noticias:listar_post' %}" class="d-flex" role="search" method="get">
+            <input class="form-control me-2" type="search" placeholder="Buscar noticia" aria-label="Search"
+                name="buscador">
+            <button class="btn btn-secondary" type="submit">Buscar</button>
+        </form>
+    </div>
+</div>
+
+{% if post %}
+<div class="container-fluid" style="margin-top: 2%">
+    <div class="mbr-section-head">
+        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2" style="text-align: center;">
+            <strong class="texto-enfocado">NOTICIAS</strong>
+        </h3>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for p in post %}
+        <div class="col">
+            <div class="card">
+                <img src="{{ p.imagen.url }}" class="card-img-top" alt="{{p.titulo}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.titulo}}</h5>
+                    <p style="text-align: center;" class="mbr-timeline-date"><small
+                            class="text-body-secondary">{{p.fecha_agragado}}</small></p>
+                    <p class="card-text">{{p.contendio|slice:":200"}}... <a
+                            href="{% url 'apps.noticias:post_detalle' p.id %}" style="font-size: small;">Leer más</a>
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Categoria: {{p.categoria}}</li>
+                        <li class="list-group-item">Autor: {{p.autor}}</li>
+                        <li class="list-group-item">Agregado por:{{p.colaborador}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+</section>
+{% endblock %}

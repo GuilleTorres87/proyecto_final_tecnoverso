@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Sobre Nosotros</title>
+{% endblock %}
+
+{% block navegacion %}
+<!-- Barra de navegacion -->
+{% include 'navegacion.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div class="image-wrapper">
+    <div class="text-overlay">
+        <p style="text-align: justify;"><strong>Te damos la bienvenido a "TecnoVerso"</strong>. Este apasionante blog es el resultado del trabajo conjunto de un
+        grupo de estudiantes de desarrollo web que comparten un inmenso interés por el emocionante universo del
+        metaverso. Aquí, nos enorgullece ser el epicentro de las noticias más destacadas sobre este fascinante
+        mundo digital.</p>
+
+        <p style="text-align: justify;"><strong>Nuestro propósito</strong> es brindarte un espacio donde puedas explorar a fondo todas las novedades, avances y
+        maravillas
+        que se despliegan en el metaverso. Como entusiastas de la tecnología y la creatividad, nuestro equipo de
+        estudiantes
+        se ha dedicado a investigar y compartir contigo todo lo relacionado con este revolucionario ámbito.</p>
+        
+        <p style="text-align: justify;">Cada artículo que encontrarás en "TecnoVerso" es el fruto del esfuerzo conjunto de estos estudiantes,
+        quienes han dedicado su tiempo y talento para brindarte información relevante y entretenida sobre las
+        últimas tendencias y descubrimientos en el metaverso.</p>
+        
+        <p style="text-align: justify;">Sin importar si eres un entusiasta, un curioso visitante o un colaborador interesado en compartir tus
+        experiencias, te invitamos a formar parte de esta emocionante travesía hacia un futuro digital sin fronteras. Juntos,
+        exploraremos las infinitas posibilidades que el metaverso tiene para ofrecer.
+        
+        <h3>¡Esperamos que disfrutes cada paso en el <strong>TecnoVerso</strong>!</h3></p>
+        <h6><strong>Daniel Victor Diaz - Guillermo Andres Torres - Zenon Gonzalez</strong></h6>
+
+        <!-- Agrega más contenido de texto aquí si es necesario -->
+    </div>
+    <img src="{% static 'img/fondo.jpg' %}">
+</div>
+{% endblock %}

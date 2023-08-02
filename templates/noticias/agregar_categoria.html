@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
+{% block contenido %}
+{% load static %}
+<div class="main-container" style="text-align: center; margin-top: 12%;">
+    <form action="" method="POST" enctype="multipart/form-data">
+        <!-- input class="btn btn-primary" type="submit" value="submit post" -->
+        {% csrf_token %}
+        <div class="overlay">
+            <!-- con = container for items in the form -->
+            <div class="con">
+                <!-- Start header content -->
+                <header class="head-form">
+                    <h2>Agregar categoria</h2>
+                    <!-- a welcome message or on explanation of the login form -->
+                    <p>Ingrese los datos y presione el boton guardar</p>
+
+                </header>
+                <div>
+                    {{form.as_p}}
+                    <input type="submit" value="Guardar">
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>
+{% endblock %}

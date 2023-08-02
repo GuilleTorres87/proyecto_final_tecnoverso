@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Registro</title>
+{% endblock %}
+{% block navegacion %}
+<!-- Barra de navegacion -->
+{% include 'navegacion.html' %}
+{% endblock %}
+{% block contenido %}
+<div class="image-wrapper">
+    <div class="text-overlay">
+        <div class="container">
+            <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+                {{form.as_p}}
+                <div class="cool-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Registrarse</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <img src="{% static 'img/registrarse.jpg' %}">
+
+    <div class="container">
+        <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+            {{form.as_p}}
+            <div class="cool-auto">
+                <button type="submit" class="btn btn-primary mb-3">Registrarse</button>
+            </div>
+
+        </form>
+
+    </div>
+    {% endblock %}

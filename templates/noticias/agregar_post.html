@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navegacion %}
+{% include 'navegacion.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div class="main-container" style="text-align:center; margin: top 12%;">
+    <form action="" method="POST" enctype="multipart/form-data">
+        <form method="post">{% csrf_token %}
+            <div class="overlay">
+                <form>
+                    <div class="con">
+                        <header class="head-form">
+                            <h2>Agregar Noticia</h2>
+                            <p>Ingrese los datos y presione el boton de guardar, luego podra ver su publicacion en la seccion
+                                noticias:</p>
+
+                        </header>
+                        <div>
+                            {{form.as_p}}
+                            {{form.media}}
+                            <input class="btn btn-outline-secondary" type="submit" data-bs-toggle="modal"
+                                style="text-align:center;" data-bs-target="#exampleModal" value="Guardar Post" />
+                            <!--  Modal -->
+                            <div class="Modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden='true'>
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Noticia cargada</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Su noticia fue cargada con exito!
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn btn-outline-secondary" href="{% url 'inicio' %}">Volver al
+                                                inicio</a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </form>
+
+    </form>
+
+</div>
+{% endblock %}
