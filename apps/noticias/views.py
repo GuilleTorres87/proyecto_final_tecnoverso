@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import *
+from .models import Categorias, Post
 from apps.opiniones.models import Opinion
 from apps.opiniones.forms import OpinionForm
 
